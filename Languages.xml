@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings>
+
+    <language id="com.github.mkhl.textile">
+
+        <name>Textile</name>
+
+        <root-zone>text.html.textile</root-zone>
+
+        <detectors>
+            <extension>textile</extension>
+        </detectors>
+
+    </language>
+
+</settings>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<injections>
+    <injection name="injections.textile.embedded-html"
+           selector="text.html.textile"
+             action="insert-before-children">
+        <include syntax="text.html.basic" />
+    </injection>
+</injections>

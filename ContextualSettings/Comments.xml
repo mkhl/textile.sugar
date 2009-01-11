@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings>
+
+	<setting name="comment-multiline-start">
+		<syntax-context>textile, textile *</syntax-context>
+		<value>&lt;!--</value>
+	</setting>
+
+	<setting name="comment-multiline-end">
+		<syntax-context>textile, textile *</syntax-context>
+		<value>--></value>
+	</setting>
+
+	<setting name="comment-multiline-end-inert">
+		<syntax-context>textile, textile *</syntax-context>
+		<value>--*></value>
+	</setting>
+
+	<setting name="comment-singleline-start">
+		<syntax-context>textile, textile *</syntax-context>
+		<no-value/>
+	</setting>
+	
+</settings>

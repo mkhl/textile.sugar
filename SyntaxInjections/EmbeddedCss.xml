@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<injections>
+    <injection name="injections.textile.embedded-css"
+           selector="meta.attributes.style.textile"
+             action="replace-children">
+        <zone name="embedded.property-list.css">
+            <starts-with>
+                <expression>(?&lt;=\{)</expression>
+            </starts-with>
+            <ends-with>
+                <expression>(?=\})</expression>
+            </ends-with>
+            <subzones>
+                <include syntax="styling.css" collection="properties" />
+            </subzones>
+        </zone>
+    </injection>
+</injections>

@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<syntax name="text.html.textile">
+    <zones>
+        <zone name="meta.heading.textile">
+            <starts-with>
+                <expression>^(h[1-6])</expression>
+                <capture number="0" name="tag.open.heading.textile" />
+                <capture number="1" name="entity.name" />
+            </starts-with>
+            <ends-with>
+                <expression>^$</expression>
+                <capture number="0" name="tag.close.heading.textile" />
+            </ends-with>
+            <subzones>
+                <zone name="meta.heading.content">
+                    <starts-with>
+                        <expression>(?&lt;=\.\s+)</expression>
+                    </starts-with>
+                    <ends-with>
+                        <expression>^$</expression>
+                    </ends-with>
+                    <subzones>
+                        <include collection="inline" />
+                        <include syntax="text.html.basic" />
+                    </subzones>
+                </zone>
+                <zone name="meta.heading.attributes">
+                    <starts-with>
+                        <expression>(?&lt;=^h[1-6])</expression>
+                    </starts-with>
+                    <ends-with>
+                        <expression>(\.)\s+</expression>
+                        <capture number="1" name="punctuation.definition.end" />
+                    </ends-with>
+                    <subzones>
+                        <include collection="attributes" />
+                    </subzones>
+                </zone>
+            </subzones>
+        </zone>
+        <zone name="meta.quote.textile">
+            <starts-with>
+                <expression>^(bq)</expression>
+                <capture number="0" name="tag.open.quote.textile" />
+                <capture number="1" name="entity.name" />
+            </starts-with>
+            <ends-with>
+                <expression>^$</expression>
+                <capture number="0" name="tag.close.quote.textile" />
+            </ends-with>
+            <subzones>
+                <zone name="meta.quote.content">
+                    <starts-with>
+                        <expression>(?&lt;=\.\s+)</expression>
+                    </starts-with>
+                    <ends-with>
+                        <expression>^$</expression>
+                    </ends-with>
+                    <subzones>
+                        <include collection="inline" />
+                        <include syntax="text.html.basic" />
+                    </subzones>
+                </zone>
+                <zone name="meta.quote.attributes">
+                    <starts-with>
+                        <expression>(?&lt;=^bq)</expression>
+                    </starts-with>
+                    <ends-with>
+                        <expression>(\.)\s+</expression>
+                        <capture number="1" name="punctuation.definition.end" />
+                    </ends-with>
+                    <subzones>
+                        <include collection="attributes" />
+                    </subzones>
+                </zone>
+            </subzones>
+        </zone>
+        <zone name="meta.footnote.textile">
+            <starts-with>
+                <expression>^(fn[0-9]+)</expression>
+                <capture number="0" name="tag.open.footnote.textile" />
+                <capture number="1" name="entity.name" />
+            </starts-with>
+            <ends-with>
+                <expression>^$</expression>
+                <capture number="0" name="tag.close.footnote.textile" />
+            </ends-with>
+            <subzones>
+                <zone name="meta.footnote.content">
+                    <starts-with>
+                        <expression>(?&lt;=\.\s+)</expression>
+                    </starts-with>
+                    <ends-with>
+                        <expression>^$</expression>
+                    </ends-with>
+                    <subzones>
+                        <include collection="inline" />
+                        <include syntax="text.html.basic" />
+                    </subzones>
+                </zone>
+                <zone name="meta.footnote.attributes">
+                    <starts-with>
+                        <expression>(?&lt;=^fn[0-9]+)</expression>
+                    </starts-with>
+                    <ends-with>
+                        <expression>(\.)\s+</expression>
+                        <capture number="1" name="punctuation.definition.end" />
+                    </ends-with>
+                    <subzones>
+                        <include collection="attributes" />
+                    </subzones>
+                </zone>
+            </subzones>
+        </zone>
+        <zone name="meta.table.textile">
+            <starts-with>
+                <expression>^(table)</expression>
+                <capture number="0" name="tag.open.table.textile" />
+                <capture number="1" name="entity.name" />
+            </starts-with>
+            <ends-with>
+                <expression>^$</expression>
+                <capture number="0" name="tag.close.table.textile" />
+            </ends-with>
+            <subzones>
+                <zone name="meta.table.content">
+                    <starts-with>
+                        <expression>(?&lt;=\.\s+)</expression>
+                    </starts-with>
+                    <ends-with>
+                        <expression>^$</expression>
+                    </ends-with>
+                    <subzones>
+                        <include collection="inline" />
+                        <include syntax="text.html.basic" />
+                    </subzones>
+                </zone>
+                <zone name="meta.table.attributes">
+                    <starts-with>
+                        <expression>(?&lt;=^table)</expression>
+                    </starts-with>
+                    <ends-with>
+                        <expression>(\.)\s+</expression>
+                        <capture number="1" name="punctuation.definition.end" />
+                    </ends-with>
+                    <subzones>
+                        <include collection="attributes" />
+                    </subzones>
+                </zone>
+            </subzones>
+        </zone>
+        <zone name="meta.paragraph.textile">
+            <starts-with>
+                <expression>^(p)</expression>
+                <capture number="0" name="tag.open.paragraph.textile" />
+                <capture number="1" name="entity.name" />
+            </starts-with>
+            <ends-with>
+                <expression>^$</expression>
+                <capture number="0" name="tag.close.paragraph.textile" />
+            </ends-with>
+            <subzones>
+                <zone name="meta.paragraph.content">
+                    <starts-with>
+                        <expression>(?&lt;=\.\s+)</expression>
+                    </starts-with>
+                    <ends-with>
+                        <expression>^$</expression>
+                    </ends-with>
+                    <subzones>
+                        <include collection="inline" />
+                        <include syntax="text.html.basic" />
+                    </subzones>
+                </zone>
+                <zone name="meta.paragraph.attributes">
+                    <starts-with>
+                        <expression>(?&lt;=^p)</expression>
+                    </starts-with>
+                    <ends-with>
+                        <expression>(\.)\s+</expression>
+                        <capture number="1" name="punctuation.definition.end" />
+                    </ends-with>
+                    <subzones>
+                        <include collection="attributes" />
+                    </subzones>
+                </zone>
+            </subzones>
+        </zone>
+        <zone name="meta.paragraph.textile">
+            <starts-with>
+                <expression>^(?=\S)</expression>
+                <capture number="0" name="tag.open.paragraph.textile" />
+            </starts-with>
+            <ends-with>
+                <expression>^$</expression>
+                <capture number="0" name="tag.close.paragraph.textile" />
+            </ends-with>
+            <subzones>
+                <include collection="inline"/>
+                <include syntax="text.html.basic"/>
+            </subzones>
+        </zone>
+    </zones>
+    <library>
+        <collection name="attributes">
+            <zone name="meta.attributes.class-or-id.textile">
+                <expression>(?x)
+                \(                      # open paren
+                    (?:                 # either: #id
+                        \#([A-Za-z][A-Za-z0-9\-_:.]+)
+                    |                   # or: class
+                        ([^#)]+)
+                    )+
+                \)                      # close paren
+                </expression>
+                <capture number="1" name="name.id" />
+                <capture number="2" name="name.class" />
+            </zone>
+            <zone name="meta.attributes.style.textile">
+                <starts-with>
+                    <expression>(\{)</expression>
+                    <capture number="1" name="punctuation.definition.begin"/>
+                </starts-with>
+                <ends-with>
+                    <expression>(\})</expression>
+                    <capture number="1" name="punctuation.definition.end"/>
+                </ends-with>
+                <subzones>
+                </subzones>
+            </zone>
+            <zone name="meta.attributes.language.textile">
+                <expression>\[([^\]]+)\]</expression>
+            </zone>
+            <zone name="meta.attributes.alignment.textile">
+                <expression>(=|&lt;|>|&lt;>)</expression>
+            </zone>
+            <zone name="meta.attributes.indentation.textile">
+                <expression>\(+|\)+</expression>
+            </zone>
+            <zone name="invalid.illegal.bad-attribute.textile">
+                <expression>.</expression>
+            </zone>
+        </collection>
+        <collection name="inline">
+            <zone name="markup.list.unnumbered.textile">
+                <expression>^\*+(?:\(([^)]*)\)|{([^}]*)})*(\s+|$)</expression>
+                <capture number="1" name="entity.name.type.textile"/>
+                <capture number="2" name="entity.name.type.textile"/>
+            </zone>
+            <zone name="markup.list.numbered.textile">
+                <expression>^#+(?:\(([^)]*)\)|{([^}]*)})*\s+</expression>
+                <capture number="1" name="entity.name.type.textile"/>
+                <capture number="2" name="entity.name.type.textile"/>
+            </zone>
+            <zone name="meta.link.reference.textile">
+                <expression>(?x)
+								"								# Start name, etc
+									(?:							# Attributes
+										# I swear, this is how the language is defined,
+										# couldnt make it up if I tried.
+										(?:\([^)]+\))?(?:\{[^}]+\})?(?:\[[^\]]+\])?
+											# Class, Style, Lang
+									  | (?:\{[^}]+\})?(?:\[[^\]]+\])?(?:\([^)]+\))?
+											# Style, Lang, Class
+									  | (?:\[[^\]]+\])?(?:\{[^}]+\})?(?:\([^)]+\))?
+											# Lang, Style, Class
+									)?
+									([^"]+?)					# Link name
+									\s?							# Optional whitespace
+									(?:\(([^)]+?)\))?
+								":								# End name
+								(\w[-\w_]*)						# Linkref
+								(?=[^\w\/;]*?(&lt;|\s|$))			# Catch closing punctuation
+																#  and end of meta.link
+					</expression>
+                <capture number="1" name="string.other.link.title.textile"/>
+                <capture number="2" name="string.other.link.description.title.textile"/>
+                <capture number="3" name="constant.other.reference.link.textile"/>
+            </zone>
+            <zone name="meta.link.inline.textile">
+                <expression>(?x)
+								"								# Start name, etc
+									(?:							# Attributes
+										# I swear, this is how the language is defined,
+										# couldnt make it up if I tried.
+										(?:\([^)]+\))?(?:\{[^}]+\})?(?:\[[^\]]+\])?
+											# Class, Style, Lang
+									  | (?:\{[^}]+\})?(?:\[[^\]]+\])?(?:\([^)]+\))?
+											# Style, Lang, Class
+									  | (?:\[[^\]]+\])?(?:\{[^}]+\})?(?:\([^)]+\))?
+											# Lang, Style, Class
+									)?
+									([^"]+?)					# Link name
+									\s?							# Optional whitespace
+									(?:\(([^)]+?)\))?
+								":								# End Name
+								(\S*?(?:\w|\/|;))				# URL
+								(?=[^\w\/;]*?(&lt;|\s|$))			# Catch closing punctuation
+																#  and end of meta.link
+					</expression>
+                <capture number="1" name="string.other.link.title.textile"/>
+                <capture number="2" name="string.other.link.description.title.textile"/>
+                <capture number="3" name="markup.underline.link.textile"/>
+            </zone>
+            <zone name="meta.image.inline.textile">
+                <expression>(?x)
+								\!										# Open image
+								(\&lt;|\=|\>)?								# Optional alignment
+								(?:										# Attributes
+									# I swear, this is how the language is defined,
+									# couldnt make it up if I tried.
+									(?:\([^)]+\))?(?:\{[^}]+\})?(?:\[[^\]]+\])?
+										# Class, Style, Lang
+								  | (?:\{[^}]+\})?(?:\[[^\]]+\])?(?:\([^)]+\))?
+										# Style, Lang, Class
+								  | (?:\[[^\]]+\])?(?:\{[^}]+\})?(?:\([^)]+\))?
+										# Lang, Style, Class
+								)?
+								(?:\.[ ])?            					# Optional
+								([^\s(!]+?)         					# Image URL
+								\s?                						# Optional space
+								(?:\(((?:[^\(\)]|\([^\)]+\))+?)\))?   	# Optional title
+								\!										# Close image
+								(?:
+									:
+									(\S*?(?:\w|\/|;))					# URL
+									(?=[^\w\/;]*?(&lt;|\s|$))				# Catch closing punctuation
+								)?
+					</expression>
+                <capture number="2" name="markup.underline.link.image.textile"/>
+                <capture number="3" name="string.other.link.description.textile"/>
+                <capture number="4" name="markup.underline.link.textile"/>
+            </zone>
+            <zone name="markup.other.table.cell.textile">
+                <expression>\|(?:\(([^)]*)\)|{([^}]*)})*(\\\||.)+\|</expression>
+                <capture number="1" name="entity.name.type.textile"/>
+                <capture number="2" name="entity.name.type.textile"/>
+            </zone>
+            <zone name="markup.bold.textile">
+                <expression>\B(\*\*?)((?:\(([^)]*)\)|{([^}]*)}|\[[^]]+\]){0,3})(\S.*?\S|\S)\1\B</expression>
+                <capture number="3" name="entity.name.type.textile"/>
+                <capture number="4" name="entity.name.type.textile"/>
+            </zone>
+            <zone name="markup.deleted.textile">
+                <expression>\B-((?:\(([^)]*)\)|{([^}]*)}|\[[^]]+\]){0,3})(\S.*?\S|\S)-\B</expression>
+                <capture number="2" name="entity.name.type.textile"/>
+                <capture number="3" name="entity.name.type.textile"/>
+            </zone>
+            <zone name="markup.inserted.textile">
+                <expression>\B\+((?:\(([^)]*)\)|{([^}]*)}|\[[^]]+\]){0,3})(\S.*?\S|\S)\+\B</expression>
+                <capture number="2" name="entity.name.type.textile"/>
+                <capture number="3" name="entity.name.type.textile"/>
+            </zone>
+            <zone name="markup.italic.textile">
+                <expression>(?:\b|\s)_((?:\(([^)]*)\)|{([^}]*)}|\[[^]]+\]){0,3})(\S.*?\S|\S)_(?:\b|\s)</expression>
+                <capture number="2" name="entity.name.type.textile"/>
+                <capture number="3" name="entity.name.type.textile"/>
+            </zone>
+            <zone name="markup.italic.phrasemodifiers.textile">
+                <expression>\B([@\^~%]|\?\?)((?:\(([^)]*)\)|{([^}]*)}|\[[^]]+\]){0,3})(\S.*?\S|\S)\1</expression>
+                <capture number="3" name="entity.name.type.textile"/>
+                <capture number="4" name="entity.name.type.textile"/>
+            </zone>
+            <zone name="entity.name.tag.textile">
+                <expression>(?&lt;!w)\[[0-9+]\]</expression>
+            </zone>
+        </collection>
+    </library>
+</syntax>

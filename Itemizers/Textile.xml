@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<itemizer>
+
+    <recipe name="mkhl.textile.tag.collection">
+        <start-selector>textile.tag.open:has-child(name:capture(name))</start-selector>
+        <end-selector>textile.tag.close</end-selector>
+        <subrecipes>
+            <include-root-recipes/>
+        </subrecipes>
+        <class>ESXHTMLItem</class>
+    </recipe>
+
+</itemizer>
