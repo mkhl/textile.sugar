@@ -225,7 +225,7 @@
             <zone name="meta.attributes.language.textile">
                 <expression>\[([^\]]+)\]</expression>
             </zone>
-            <zone name="meta.attributes.alignment.textile">
+            <zone name="meta.attributes.text-alignment.textile">
                 <expression>(=|&lt;|>|&lt;>)</expression>
             </zone>
             <zone name="meta.attributes.indentation.textile">
