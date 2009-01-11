@@ -355,8 +355,8 @@
                 <capture number="3" name="entity.name.type.textile"/>
                 <capture number="4" name="entity.name.type.textile"/>
             </zone>
-            <zone name="entity.name.tag.textile">
-                <expression>(?&lt;!w)\[[0-9+]\]</expression>
+            <zone name="constant.character.entity.textile">
+                <expression>("|'|--?|\.\.\.|(?&lt;\s)x(?=\s)|\((?:TM|R|C)\))</expression>
             </zone>
         </collection>
     </library>
