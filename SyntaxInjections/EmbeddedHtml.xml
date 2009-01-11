@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <injections>
-    <injection name="injections.textile.embedded-html"
+    <injection name="injections.textile.embedded-html.block"
            selector="text.html.textile"
              action="insert-before-children">
+        <include syntax="text.html.basic" />
+    </injection>
+    <injection name="injections.textile.embedded-html.inline"
+           selector="textile.meta.body"
+             action="insert-after-children">
+        <include syntax="text.html.basic" />
+    </injection>
+    <injection name="injections.textile.embedded-html.inline-untagged"
+           selector="section.paragraph.untagged.textile"
+             action="insert-after-children">
         <include syntax="text.html.basic" />
     </injection>
 </injections>

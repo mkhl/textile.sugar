@@ -21,7 +21,6 @@
                     </ends-with>
                     <subzones>
                         <include collection="inline" />
-                        <include syntax="text.html.basic" />
                     </subzones>
                 </zone>
                 <zone name="meta.attributes.heading.textile">
@@ -58,7 +57,6 @@
                     </ends-with>
                     <subzones>
                         <include collection="inline" />
-                        <include syntax="text.html.basic" />
                     </subzones>
                 </zone>
                 <zone name="meta.attributes.quote.textile">
@@ -95,7 +93,6 @@
                     </ends-with>
                     <subzones>
                         <include collection="inline" />
-                        <include syntax="text.html.basic" />
                     </subzones>
                 </zone>
                 <zone name="meta.attributes.footnote.textile">
@@ -132,7 +129,6 @@
                     </ends-with>
                     <subzones>
                         <include collection="inline" />
-                        <include syntax="text.html.basic" />
                     </subzones>
                 </zone>
                 <zone name="meta.attributes.table.textile">
@@ -169,7 +165,6 @@
                     </ends-with>
                     <subzones>
                         <include collection="inline" />
-                        <include syntax="text.html.basic" />
                     </subzones>
                 </zone>
                 <zone name="meta.attributes.paragraph.textile">
@@ -186,7 +181,7 @@
                 </zone>
             </subzones>
         </zone>
-        <zone name="section.paragraph.textile">
+        <zone name="section.paragraph.untagged.textile">
             <starts-with>
                 <expression>^(?=\S)</expression>
                 <capture number="0" name="tag.open.paragraph.textile" />
@@ -197,7 +192,6 @@
             </ends-with>
             <subzones>
                 <include collection="inline"/>
-                <include syntax="text.html.basic"/>
             </subzones>
         </zone>
     </zones>
