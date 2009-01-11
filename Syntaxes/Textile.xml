@@ -421,7 +421,7 @@
                 <capture number="4" name="entity.name.type.textile"/>
             </zone>
             <zone name="constant.character.entity.textile">
-                <expression>("|'|--?|\.\.\.|(?&lt;\s)x(?=\s)|\((?:TM|R|C)\))</expression>
+                <expression>("|'|\-\-?|\.\.\.|\((?:TM|R|C)\)|(?&lt;=\s)x(?=\s))</expression>
             </zone>
         </collection>
     </library>
