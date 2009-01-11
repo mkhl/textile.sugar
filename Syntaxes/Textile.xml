@@ -396,32 +396,134 @@
                 </subzones>
             </zone>
             <zone name="markup.bold.textile">
-                <expression>\B(\*\*?)((?:\(([^)]*)\)|{([^}]*)}|\[[^]]+\]){0,3})(\S.*?\S|\S)\1\B</expression>
-                <capture number="3" name="entity.name.type.textile"/>
-                <capture number="4" name="entity.name.type.textile"/>
-            </zone>
-            <zone name="markup.deleted.textile">
-                <expression>\B-((?:\(([^)]*)\)|{([^}]*)}|\[[^]]+\]){0,3})(\S.*?\S|\S)-\B</expression>
-                <capture number="2" name="entity.name.type.textile"/>
-                <capture number="3" name="entity.name.type.textile"/>
-            </zone>
-            <zone name="markup.inserted.textile">
-                <expression>\B\+((?:\(([^)]*)\)|{([^}]*)}|\[[^]]+\]){0,3})(\S.*?\S|\S)\+\B</expression>
-                <capture number="2" name="entity.name.type.textile"/>
-                <capture number="3" name="entity.name.type.textile"/>
+                <starts-with>
+                    <expression>(?:^|(?&lt;=\W))(\*{1,2})(?=[^\s\*])</expression>
+                    <capture number="1" name="punctuation.markup.bold.textile" />
+                </starts-with>
+                <ends-with>
+                    <expression>(\*{1,2})(?=\W)</expression>
+                    <!-- I'd love to use a backref here, but it crashes Espresso... -->
+                    <!-- <expression>(\1)(?=\W)</expression> -->
+                    <capture number="1" name="punctuation.markup.bold.textile" />
+                </ends-with>
+                <subzones>
+                    <include collection="attributes" />
+                    <include collection="inline" />
+                </subzones>
             </zone>
             <zone name="markup.italic.textile">
-                <expression>(?:\b|\s)_((?:\(([^)]*)\)|{([^}]*)}|\[[^]]+\]){0,3})(\S.*?\S|\S)_(?:\b|\s)</expression>
-                <capture number="2" name="entity.name.type.textile"/>
-                <capture number="3" name="entity.name.type.textile"/>
+                <starts-with>
+                    <expression>(?:^|(?&lt;=\W))(__?)(?=[^\s_])</expression>
+                    <capture number="1" name="punctuation.markup.span.textile" />
+                </starts-with>
+                <ends-with>
+                    <expression>(\1)(?=\W)</expression>
+                    <capture number="1" name="punctuation.markup.span.textile" />
+                </ends-with>
+                <subzones>
+                    <include collection="attributes" />
+                    <include collection="inline" />
+                </subzones>
             </zone>
-            <zone name="markup.italic.phrasemodifiers.textile">
-                <expression>\B([@\^~%]|\?\?)((?:\(([^)]*)\)|{([^}]*)}|\[[^]]+\]){0,3})(\S.*?\S|\S)\1</expression>
-                <capture number="3" name="entity.name.type.textile"/>
-                <capture number="4" name="entity.name.type.textile"/>
+            <zone name="markup.citation.textile">
+                <starts-with>
+                    <expression>(?:^|(?&lt;=\W))(\?{2})(?=[^\s\?])</expression>
+                    <capture number="1" name="punctuation.markup.citation.textile" />
+                </starts-with>
+                <ends-with>
+                    <expression>(\?{2})(?=\W)</expression>
+                    <capture number="1" name="punctuation.markup.citation.textile" />
+                </ends-with>
+                <subzones>
+                    <include collection="attributes" />
+                    <include collection="inline" />
+                </subzones>
+            </zone>
+            <zone name="markup.code.textile">
+                <starts-with>
+                    <expression>(?:^|(?&lt;=\W))(@)(?=[^\s@])</expression>
+                    <capture number="1" name="punctuation.markup.code.textile" />
+                </starts-with>
+                <ends-with>
+                    <expression>(\1)(?=\W)</expression>
+                    <capture number="1" name="punctuation.markup.code.textile" />
+                </ends-with>
+                <subzones>
+                    <include collection="attributes" />
+                </subzones>
+            </zone>
+            <zone name="markup.deleted.textile">
+                <starts-with>
+                    <expression>(?:^|(?&lt;=\W))(\-)(?=[^\s\-])</expression>
+                    <capture number="1" name="punctuation.markup.deleted.textile" />
+                </starts-with>
+                <ends-with>
+                    <expression>(\1)(?=\W)</expression>
+                    <capture number="1" name="punctuation.markup.deleted.textile" />
+                </ends-with>
+                <subzones>
+                    <include collection="attributes" />
+                    <include collection="inline" />
+                </subzones>
+            </zone>
+            <zone name="markup.inserted.textile">
+                <starts-with>
+                    <expression>(?:^|(?&lt;=\W))(\+)(?=[^\s\+])</expression>
+                    <capture number="1" name="punctuation.markup.inserted.textile" />
+                </starts-with>
+                <ends-with>
+                    <expression>(\+)(?=\W)</expression>
+                    <capture number="1" name="punctuation.markup.inserted.textile" />
+                </ends-with>
+                <subzones>
+                    <include collection="attributes" />
+                    <include collection="inline" />
+                </subzones>
+            </zone>
+            <zone name="markup.superscript.textile">
+                <starts-with>
+                    <expression>(?:^|(?&lt;=\W))(\^)(?=[^\s\^])</expression>
+                    <capture number="1" name="punctuation.markup.superscript.textile" />
+                </starts-with>
+                <ends-with>
+                    <expression>(\^)(?=\W)</expression>
+                    <capture number="1" name="punctuation.markup.superscript.textile" />
+                </ends-with>
+                <subzones>
+                    <include collection="attributes" />
+                    <include collection="inline" />
+                </subzones>
+            </zone>
+            <zone name="markup.subscript.textile">
+                <starts-with>
+                    <expression>(?:^|(?&lt;=\W))(~)(?=[^\s~])</expression>
+                    <capture number="1" name="punctuation.markup.subscript.textile" />
+                </starts-with>
+                <ends-with>
+                    <expression>(\1)(?=\W)</expression>
+                    <capture number="1" name="punctuation.markup.subscript.textile" />
+                </ends-with>
+                <subzones>
+                    <include collection="attributes" />
+                    <include collection="inline" />
+                </subzones>
+            </zone>
+            <zone name="markup.span.textile">
+                <starts-with>
+                    <expression>(?:^|(?&lt;=\W))(%)(?=[^\s%])</expression>
+                    <capture number="1" name="punctuation.markup.span.textile" />
+                </starts-with>
+                <ends-with>
+                    <expression>(\1)(?=\W)</expression>
+                    <capture number="1" name="punctuation.markup.span.textile" />
+                </ends-with>
+                <subzones>
+                    <include collection="attributes" />
+                    <include collection="inline" />
+                </subzones>
             </zone>
             <zone name="constant.character.entity.textile">
-                <expression>("|'|\-\-?|\.\.\.|\((?:TM|R|C)\)|(?&lt;=\s)x(?=\s))</expression>
+                <expression>("|'|\-{1,2}|\.{3}|\((?:TM|R|C)\)|(?&lt;=\s)x(?=\s))</expression>
             </zone>
         </collection>
     </library>
