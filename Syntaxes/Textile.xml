@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <syntax name="text.html.textile">
     <zones>
-        <zone name="meta.heading.textile">
+        <zone name="section.heading.textile">
             <starts-with>
                 <expression>^(h[1-6])</expression>
                 <capture number="0" name="tag.open.heading.textile" />
@@ -12,7 +12,7 @@
                 <capture number="0" name="tag.close.heading.textile" />
             </ends-with>
             <subzones>
-                <zone name="meta.heading.content">
+                <zone name="meta.body.heading.textile">
                     <starts-with>
                         <expression>(?&lt;=\.\s+)</expression>
                     </starts-with>
@@ -24,7 +24,7 @@
                         <include syntax="text.html.basic" />
                     </subzones>
                 </zone>
-                <zone name="meta.heading.attributes">
+                <zone name="meta.attributes.heading.textile">
                     <starts-with>
                         <expression>(?&lt;=^h[1-6])</expression>
                     </starts-with>
@@ -38,7 +38,7 @@
                 </zone>
             </subzones>
         </zone>
-        <zone name="meta.quote.textile">
+        <zone name="section.quote.textile">
             <starts-with>
                 <expression>^(bq)</expression>
                 <capture number="0" name="tag.open.quote.textile" />
@@ -49,7 +49,7 @@
                 <capture number="0" name="tag.close.quote.textile" />
             </ends-with>
             <subzones>
-                <zone name="meta.quote.content">
+                <zone name="meta.body.quote.textile">
                     <starts-with>
                         <expression>(?&lt;=\.\s+)</expression>
                     </starts-with>
@@ -61,7 +61,7 @@
                         <include syntax="text.html.basic" />
                     </subzones>
                 </zone>
-                <zone name="meta.quote.attributes">
+                <zone name="meta.attributes.quote.textile">
                     <starts-with>
                         <expression>(?&lt;=^bq)</expression>
                     </starts-with>
@@ -75,7 +75,7 @@
                 </zone>
             </subzones>
         </zone>
-        <zone name="meta.footnote.textile">
+        <zone name="section.footnote.textile">
             <starts-with>
                 <expression>^(fn[0-9]+)</expression>
                 <capture number="0" name="tag.open.footnote.textile" />
@@ -86,7 +86,7 @@
                 <capture number="0" name="tag.close.footnote.textile" />
             </ends-with>
             <subzones>
-                <zone name="meta.footnote.content">
+                <zone name="meta.body.footnote.textile">
                     <starts-with>
                         <expression>(?&lt;=\.\s+)</expression>
                     </starts-with>
@@ -98,7 +98,7 @@
                         <include syntax="text.html.basic" />
                     </subzones>
                 </zone>
-                <zone name="meta.footnote.attributes">
+                <zone name="meta.attributes.footnote.textile">
                     <starts-with>
                         <expression>(?&lt;=^fn[0-9]+)</expression>
                     </starts-with>
@@ -112,7 +112,7 @@
                 </zone>
             </subzones>
         </zone>
-        <zone name="meta.table.textile">
+        <zone name="section.table.textile">
             <starts-with>
                 <expression>^(table)</expression>
                 <capture number="0" name="tag.open.table.textile" />
@@ -123,7 +123,7 @@
                 <capture number="0" name="tag.close.table.textile" />
             </ends-with>
             <subzones>
-                <zone name="meta.table.content">
+                <zone name="meta.body.table.textile">
                     <starts-with>
                         <expression>(?&lt;=\.\s+)</expression>
                     </starts-with>
@@ -135,7 +135,7 @@
                         <include syntax="text.html.basic" />
                     </subzones>
                 </zone>
-                <zone name="meta.table.attributes">
+                <zone name="meta.attributes.table.textile">
                     <starts-with>
                         <expression>(?&lt;=^table)</expression>
                     </starts-with>
@@ -149,7 +149,7 @@
                 </zone>
             </subzones>
         </zone>
-        <zone name="meta.paragraph.textile">
+        <zone name="section.paragraph.textile">
             <starts-with>
                 <expression>^(p)</expression>
                 <capture number="0" name="tag.open.paragraph.textile" />
@@ -160,7 +160,7 @@
                 <capture number="0" name="tag.close.paragraph.textile" />
             </ends-with>
             <subzones>
-                <zone name="meta.paragraph.content">
+                <zone name="meta.body.paragraph.textile">
                     <starts-with>
                         <expression>(?&lt;=\.\s+)</expression>
                     </starts-with>
@@ -172,7 +172,7 @@
                         <include syntax="text.html.basic" />
                     </subzones>
                 </zone>
-                <zone name="meta.paragraph.attributes">
+                <zone name="meta.attributes.paragraph.textile">
                     <starts-with>
                         <expression>(?&lt;=^p)</expression>
                     </starts-with>
@@ -186,7 +186,7 @@
                 </zone>
             </subzones>
         </zone>
-        <zone name="meta.paragraph.textile">
+        <zone name="section.paragraph.textile">
             <starts-with>
                 <expression>^(?=\S)</expression>
                 <capture number="0" name="tag.open.paragraph.textile" />
