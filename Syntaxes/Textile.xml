@@ -235,6 +235,19 @@
                 <expression>.</expression>
             </zone>
         </collection>
+        <collection name="cell-attributes">
+            <zone name="meta.attributes.table.header-cell.textile">
+                <expression>_</expression>
+                <capture number="0" name="punctuation.definition.header-cell.textile" />
+            </zone>
+            <zone name="meta.attributes.table.vertical-alignment.textile">
+                <expression>(\^|~)</expression>
+            </zone>
+            <zone name="meta.attributes.table.spanning.textile">
+                <expression>([/\\])(\d+)</expression>
+            </zone>
+            <include collection="attributes" />
+        </collection>
         <collection name="inline">
             <zone name="markup.list.unnumbered.textile">
                 <expression>^\*+(?:\(([^)]*)\)|{([^}]*)})*(\s+|$)</expression>
