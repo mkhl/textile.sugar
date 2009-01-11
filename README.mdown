@@ -1,7 +1,7 @@
 Textile.sugar
 =============
 
-A sugar adding sweet [Textile] support to [Espresso][].
+A sugar adding sweet [Textile][] support to [Espresso][].
 
 [espresso]: <http://macrabbit.com/espresso/> "Espresso, by MacRabbit"
 [textile]: <http://hobix.com/textile/> "A Textile Reference"
