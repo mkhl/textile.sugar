@@ -32,7 +32,7 @@
                         <capture number="1" name="punctuation.definition.end" />
                     </ends-with>
                     <subzones>
-                        <include collection="attributes" />
+                        <include collection="block-attributes" />
                     </subzones>
                 </zone>
             </subzones>
@@ -68,7 +68,7 @@
                         <capture number="1" name="punctuation.definition.end" />
                     </ends-with>
                     <subzones>
-                        <include collection="attributes" />
+                        <include collection="block-attributes" />
                     </subzones>
                 </zone>
             </subzones>
@@ -104,7 +104,7 @@
                         <capture number="1" name="punctuation.definition.end" />
                     </ends-with>
                     <subzones>
-                        <include collection="attributes" />
+                        <include collection="block-attributes" />
                     </subzones>
                 </zone>
             </subzones>
@@ -140,7 +140,7 @@
                         <capture number="1" name="punctuation.definition.end" />
                     </ends-with>
                     <subzones>
-                        <include collection="attributes" />
+                        <include collection="block-attributes" />
                     </subzones>
                 </zone>
             </subzones>
@@ -176,7 +176,7 @@
                         <capture number="1" name="punctuation.definition.end" />
                     </ends-with>
                     <subzones>
-                        <include collection="attributes" />
+                        <include collection="block-attributes" />
                     </subzones>
                 </zone>
             </subzones>
@@ -225,6 +225,9 @@
             <zone name="meta.attributes.language.textile">
                 <expression>\[([^\]]+)\]</expression>
             </zone>
+        </collection>
+        <collection name="block-attributes">
+            <include collection="attributes" />
             <zone name="meta.attributes.text-alignment.textile">
                 <expression>(=|&lt;|>|&lt;>)</expression>
             </zone>
@@ -246,7 +249,7 @@
             <zone name="meta.attributes.table.spanning.textile">
                 <expression>([/\\])(\d+)</expression>
             </zone>
-            <include collection="attributes" />
+            <include collection="block-attributes" />
         </collection>
         <collection name="inline">
             <zone name="markup.list.unnumbered.textile">
