@@ -14,7 +14,7 @@
             <subzones>
                 <zone name="meta.body.heading.textile">
                     <starts-with>
-                        <expression>(?&lt;=\.\s+)</expression>
+                        <expression>(?&lt;=\.)</expression>
                     </starts-with>
                     <ends-with>
                         <expression>^$</expression>
@@ -29,7 +29,7 @@
                         <expression>(?&lt;=^h[1-6])</expression>
                     </starts-with>
                     <ends-with>
-                        <expression>(\.)\s+</expression>
+                        <expression>(\.)</expression>
                         <capture number="1" name="punctuation.definition.end" />
                     </ends-with>
                     <subzones>
@@ -51,7 +51,7 @@
             <subzones>
                 <zone name="meta.body.quote.textile">
                     <starts-with>
-                        <expression>(?&lt;=\.\s+)</expression>
+                        <expression>(?&lt;=\.)</expression>
                     </starts-with>
                     <ends-with>
                         <expression>^$</expression>
@@ -66,7 +66,7 @@
                         <expression>(?&lt;=^bq)</expression>
                     </starts-with>
                     <ends-with>
-                        <expression>(\.)\s+</expression>
+                        <expression>(\.)</expression>
                         <capture number="1" name="punctuation.definition.end" />
                     </ends-with>
                     <subzones>
@@ -88,7 +88,7 @@
             <subzones>
                 <zone name="meta.body.footnote.textile">
                     <starts-with>
-                        <expression>(?&lt;=\.\s+)</expression>
+                        <expression>(?&lt;=\.)</expression>
                     </starts-with>
                     <ends-with>
                         <expression>^$</expression>
@@ -103,7 +103,7 @@
                         <expression>(?&lt;=^fn[0-9]+)</expression>
                     </starts-with>
                     <ends-with>
-                        <expression>(\.)\s+</expression>
+                        <expression>(\.)</expression>
                         <capture number="1" name="punctuation.definition.end" />
                     </ends-with>
                     <subzones>
@@ -125,7 +125,7 @@
             <subzones>
                 <zone name="meta.body.table.textile">
                     <starts-with>
-                        <expression>(?&lt;=\.\s+)</expression>
+                        <expression>(?&lt;=\.)</expression>
                     </starts-with>
                     <ends-with>
                         <expression>^$</expression>
@@ -140,7 +140,7 @@
                         <expression>(?&lt;=^table)</expression>
                     </starts-with>
                     <ends-with>
-                        <expression>(\.)\s+</expression>
+                        <expression>(\.)</expression>
                         <capture number="1" name="punctuation.definition.end" />
                     </ends-with>
                     <subzones>
@@ -162,7 +162,7 @@
             <subzones>
                 <zone name="meta.body.paragraph.textile">
                     <starts-with>
-                        <expression>(?&lt;=\.\s+)</expression>
+                        <expression>(?&lt;=\.)</expression>
                     </starts-with>
                     <ends-with>
                         <expression>^$</expression>
@@ -177,7 +177,7 @@
                         <expression>(?&lt;=^p)</expression>
                     </starts-with>
                     <ends-with>
-                        <expression>(\.)\s+</expression>
+                        <expression>(\.)</expression>
                         <capture number="1" name="punctuation.definition.end" />
                     </ends-with>
                     <subzones>
