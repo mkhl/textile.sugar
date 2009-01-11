@@ -338,10 +338,59 @@
                 <capture number="3" name="string.other.link.description.textile"/>
                 <capture number="4" name="markup.underline.link.textile"/>
             </zone>
-            <zone name="markup.other.table.cell.textile">
-                <expression>\|(?:\(([^)]*)\)|{([^}]*)})*(\\\||.)+\|</expression>
-                <capture number="1" name="entity.name.type.textile"/>
-                <capture number="2" name="entity.name.type.textile"/>
+            <zone name="section.table.cell.stop.textile">
+                <expression>(\|)(?=$)</expression>
+                <capture number="1" name="punctuation.definition.table.textile" />
+            </zone>
+            <zone name="section.table.cell.simple.textile">
+                <expression>(\|)([^\.\|]+)(?=\|)</expression>
+                <capture number="1" name="punctuation.definition.table.textile" />
+                <capture number="2" name="meta.body.table.cell.textile" />
+            </zone>
+            <zone name="section.table.cell.without-attributes.textile">
+                <starts-with>
+                    <expression>(\|)(?=\s)</expression>
+                    <capture number="1" name="punctuation.definition.table.textile" />
+                </starts-with>
+                <ends-with>
+                    <expression>(?=\|)</expression>
+                </ends-with>
+                <subzones>
+                    <include collection="inline" />
+                </subzones>
+            </zone>
+            <zone name="section.table.cell.with-attributes.textile">
+                <starts-with>
+                    <expression>(\|)(?=\S)</expression>
+                </starts-with>
+                <ends-with>
+                    <expression>(?=\|)</expression>
+                </ends-with>
+                <subzones>
+                    <zone name="meta.body.table.cell.textile">
+                        <starts-with>
+                            <expression>(?&lt;=\.)</expression>
+                        </starts-with>
+                        <ends-with>
+                            <expression>(?=\|)</expression>
+                        </ends-with>
+                        <subzones>
+                            <include collection="inline" />
+                        </subzones>
+                    </zone>
+                    <zone name="meta.attributes.table.cell.textile">
+                        <starts-with>
+                            <expression>(?&lt;=\|)</expression>
+                        </starts-with>
+                        <ends-with>
+                            <expression>(\.)</expression>
+                            <capture number="1" name="punctuation.definition.end" />
+                        </ends-with>
+                        <subzones>
+                            <include collection="cell-attributes" />
+                        </subzones>
+                    </zone>
+                </subzones>
             </zone>
             <zone name="markup.bold.textile">
                 <expression>\B(\*\*?)((?:\(([^)]*)\)|{([^}]*)}|\[[^]]+\]){0,3})(\S.*?\S|\S)\1\B</expression>
