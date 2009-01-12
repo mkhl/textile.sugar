@@ -5,3 +5,19 @@ A sugar adding sweet [Textile][] support to [Espresso][].
 
 [espresso]: <http://macrabbit.com/espresso/> "Espresso, by MacRabbit"
 [textile]: <http://hobix.com/textile/> "A Textile Reference"
+
+
+Installation
+------------
+
+    ESPRESSO_DIR="`osascript -e 'POSIX path of (path to application support from user domain)'`"
+    mkdir -p "${ESPRESSO_DIR}/Sugars"
+    git clone git://github.com/mkhl/textile.sugar.git "${ESPRESSO_DIR}/Sugars/Textile.sugar"
+
+
+License
+-------
+
+This sugar is MIT Licensed. See [`LICENSE`][license] for details.
+
+[license]: http://github.com/mkhl/textile.sugar/raw/master/LICENSE
