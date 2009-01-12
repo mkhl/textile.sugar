@@ -10,7 +10,7 @@ A sugar adding sweet [Textile][] support to [Espresso][].
 Installation
 ------------
 
-    ESPRESSO_DIR="`osascript -e 'POSIX path of (path to application support from user domain)'`"
+    ESPRESSO_DIR="`osascript -e 'POSIX path of (path to application support from user domain)'`/Espresso"
     mkdir -p "${ESPRESSO_DIR}/Sugars"
     git clone git://github.com/mkhl/textile.sugar.git "${ESPRESSO_DIR}/Sugars/Textile.sugar"
 
