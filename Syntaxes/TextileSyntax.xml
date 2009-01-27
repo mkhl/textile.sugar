@@ -538,7 +538,7 @@
                             <expression>(?&lt;=\.)</expression>
                         </starts-with>
                         <ends-with>
-                            <expression>^$</expression>
+                            <expression>(?=\|\s*$)</expression>
                         </ends-with>
                         <subzones>
                             <include collection="table-cells" />
