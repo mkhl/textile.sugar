@@ -390,9 +390,7 @@
                     <capture number="1" name="punctuation.markup.begin" />
                 </starts-with>
                 <ends-with>
-                    <expression>(\*{1,2})(?=\W)</expression>
-                    <!-- I'd love to use a backref here, but it crashes Espresso... -->
-                    <!-- <expression>(\1)(?=\W)</expression> -->
+                    <expression>(\1)(?=\W)</expression>
                     <capture number="1" name="punctuation.markup.end" />
                 </ends-with>
                 <subzones>
