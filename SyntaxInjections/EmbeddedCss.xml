@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <injections>
+    <!--
+        TODO Get cut-off rule to work.
+    -->
+    <injection name="injections.textile.cut-off.embedded-css"
+           selector="embedded.property-list.css *"
+             action="insert-before-children">
+        <cut-off>\}</cut-off>
+    </injection>
     <injection name="injections.textile.embedded-css"
            selector="meta.attributes.style.textile"
              action="replace-children">
