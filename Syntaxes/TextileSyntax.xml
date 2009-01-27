@@ -147,7 +147,7 @@
         </zone>
         <zone name="section.table.untagged.textile">
             <starts-with>
-                <expression>^(?=[\|\{)</expression>
+                <expression>^(?=[\|\{])</expression>
                 <capture number="0" name="tag.open.table.textile" />
             </starts-with>
             <ends-with>
