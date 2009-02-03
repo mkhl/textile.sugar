@@ -1,5 +1,4 @@
-Textile.sugar
-=============
+# Textile.sugar
 
 A sugar adding sweet [Textile][] support to [Espresso][].
 
@@ -7,8 +6,7 @@ A sugar adding sweet [Textile][] support to [Espresso][].
 [textile]: <http://hobix.com/textile/> "A Textile Reference"
 
 
-Installation
-------------
+## Installation
 
 If you want to follow along from your Sugar directory:
 
@@ -21,8 +19,7 @@ Otherwise, just double-click or `open` the directory containing this file
 installing it for you.
 
 
-License
--------
+## License
 
 This sugar is released under the MIT License. See [`LICENSE`][license] for details.
 
